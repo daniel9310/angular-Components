@@ -10,9 +10,31 @@
         <p>The sum of 1 + 1 is {{1 + 1}}.</p>
         <!-- "The sum of 1 + 1 is not 4" -->
         <p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}.</p>
+        <!-- "The sum of 1 + 1 is not 4" -->
+        <p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}.</p>
       </div>
     </li>
     <br>
+    <li>Data-Binding
+      <div class="special">Plain old HTML</div>
+      <img src="images/item.png">
+      <button disabled>Save</button>
+      <!-- Bind button disabled state to `isUnchanged` property -->
+      <button [disabled]="isUnchanged">Save</button>
+      <hr>
+      <label>HTML Attribute Initializes to "Sarah":
+      <input type="text" value="Sarah" #bindingInput></label>
+      <div>
+      <button (click)="getHTMLAttributeValue()">Get HTML attribute value</button> Won't change.
+      </div>
+
+      <div>
+          <button (click)="getDOMPropertyValue()">Get DOM property value</button> Changeable. Angular works with these.
+      </div>
+    </li>
+    <hr>
+    <input [disabled]="condition ? true : false">
+<input [attr.disabled]="condition ? 'disabled' : null">
   </ul>
 
   
